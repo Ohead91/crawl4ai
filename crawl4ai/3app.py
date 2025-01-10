@@ -20,7 +20,7 @@ app.add_middleware(
 
 # 기본 데이터 디렉토리 설정
 BASE_DIR = "newsletter_data"
-MEDIA_OUTLETS = ["neuron", "deepview", "aibreakfast"]
+MEDIA_OUTLETS = ["neuron", "deepview", "aibreakfast", "aitimes"]
 
 class NewsResponse(BaseModel):
     media: str
@@ -36,6 +36,7 @@ class AvailableDates(BaseModel):
 class AvailableNewsResponse(BaseModel):
     neuron: Optional[AvailableDates] = None
     deepview: Optional[AvailableDates] = None
+    aitimes: Optional[AvailableDates] = None
     aibreakfast: Optional[AvailableDates] = None
 
 def get_formatted_date(filename: str) -> str:
