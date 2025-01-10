@@ -16,7 +16,7 @@ class NewsletterCrawler:
                 "url": "https://www.theneuron.ai/newsletter",
                 "schema": {
                     "name": "Neuron Articles",
-                    "baseSelector": "a[href*='/newsletter/']",
+                    "baseSelector": "div.article-card-texts",  # article-card-texts 클래스를 가진 div만 선택
                     "fields": [
                         {
                             "name": "title",
@@ -25,6 +25,7 @@ class NewsletterCrawler:
                         },
                         {
                             "name": "url",
+                            "selector": "a.no-style-link",  # no-style-link 클래스를 가진 링크만 선택
                             "type": "attribute",
                             "attribute": "href"
                         },
@@ -72,24 +73,54 @@ class NewsletterCrawler:
                 "url": "https://www.thedeepview.co",
                 "schema": {
                     "name": "Deep View Articles",
-                    "baseSelector": ".space-y-2",
+                    "baseSelector": "a[href*='/p/']",
                     "fields": [
                         {
                             "name": "title",
-                            "selector": "h2.line-clamp-2",
+                            "selector": "h2",
                             "type": "text"
                         },
                         {
                             "name": "url",
-                            "selector": "a[href*='/p/']",
                             "type": "attribute",
                             "attribute": "href"
                         },
                         {
                             "name": "date",
-                            "selector": "time",
+                            "selector": ".flex.items-center.space-x-1 time",
                             "type": "attribute",
                             "attribute": "datetime"
+                        },
+                        {
+                            "name": "author",
+                            "selector": "img[alt]",
+                            "type": "attribute",
+                            "attribute": "alt",
+                        }
+                    ]
+                }
+            },
+            "aitimes": {
+                "url": "https://www.aitimes.com/news/articleList.html?view_type=sm",
+                "schema": {
+                    "name": "AI Times Articles",
+                    "baseSelector": "article.box-skin.header-line .item",
+                    "fields": [
+                        {
+                            "name": "title",
+                            "selector": "span.auto-titles",
+                            "type": "text"
+                        },
+                        {
+                            "name": "url",
+                            "selector": "a",
+                            "type": "attribute",
+                            "attribute": "href"
+                        },
+                        {
+                            "name": "rank",
+                            "selector": "em.number",
+                            "type": "text"
                         }
                     ]
                 }
@@ -117,7 +148,12 @@ class NewsletterCrawler:
         """URL을 절대 경로로 변환"""
         if url.startswith('http'):
             return url
-            
+                
+        # aitimes의 경우 특별 처리
+        if 'aitimes.com' in base_url:
+            if 'articleView.html' in url:
+                return f"https://www.aitimes.com/news/{url.split('/')[-1]}"
+                
         # neuron의 경우 특별 처리
         if 'theneuron.ai' in base_url:
             # newsletter가 중복되는 것을 방지
@@ -125,7 +161,7 @@ class NewsletterCrawler:
                 return f"https://www.theneuron.ai{url}"
             else:
                 return f"https://www.theneuron.ai/newsletter/{url.lstrip('/')}"
-            
+        
         # 일반적인 상대 경로 처리
         return f"{base_url.rstrip('/')}/{url.lstrip('/')}"
 
@@ -157,39 +193,6 @@ class NewsletterCrawler:
         run_config = CrawlerRunConfig(
             cache_mode=CacheMode.BYPASS
         )
-        
-        async with AsyncWebCrawler(config=browser_config) as crawler:
-            try:
-                result = await crawler.arun(
-                    url=article_url,
-                    config=run_config
-                )
-                
-                # 날짜를 파일명 형식으로 변환
-                article_date = self.parse_date(result.metadata.get('published_time', datetime.now().isoformat()))
-                date_str = article_date.strftime('%Y%m%d')
-                
-                # 저장 경로 설정
-                save_dir = Path("newsletter_data") / source
-                save_dir.mkdir(parents=True, exist_ok=True)
-                
-                # 마크다운 파일 저장
-                file_path = save_dir / f"{date_str}.md"
-                with file_path.open('a', encoding='utf-8') as f:
-                    f.write("---\n")
-                    f.write(f"url: {article_url}\n")
-                    f.write(f"source: {source}\n")
-                    f.write(f"crawled_at: {datetime.now().isoformat()}\n")
-                    f.write("---\n\n")
-                    f.write(result.markdown)
-                    f.write("\n\n---\n\n")  # 구분선 추가
-                
-                print(f"Saved markdown for {article_url} to {file_path}")
-                return True
-                
-            except Exception as e:
-                print(f"Error saving markdown for {article_url}: {e}")
-                return False
 
     async def crawl_site(self, site_key: str, since_date: datetime):
         site_info = self.sites[site_key]
@@ -222,7 +225,7 @@ class NewsletterCrawler:
                 
                 for article in articles:
                     try:
-                        if not article.get('url') or not article.get('date'):
+                        if not article.get('url'):
                             continue
                             
                         # URL 정규화
@@ -233,12 +236,10 @@ class NewsletterCrawler:
                             print(f"Skipping already crawled: {article['url']}")
                             continue
                         
-                        # 날짜 확인
-                        article_date = self.parse_date(article['date'])
-                        if article_date < since_date:
-                            print(f"Skipping old article: {article_date}")
-                            continue
-                            
+                        # AI Times의 경우 본문 내용도 함께 가져오기
+                        if site_key == 'aitimes':
+                            article['date'] = datetime.now().strftime('%Y%m%d')  # AI Times는 현재 날짜 사용
+                        
                         article['crawled_at'] = datetime.now().isoformat()
                         article['source'] = site_key
                         filtered_articles.append(article)
@@ -247,7 +248,7 @@ class NewsletterCrawler:
                         # 마크다운 저장
                         await self.save_article_markdown(article['url'], site_key)
                         
-                        print(f"Added article: {article.get('title', 'No title')} ({article_date})")
+                        print(f"Added article: {article.get('title', 'No title')} (Rank: {article.get('rank', 'N/A')})")
                         
                     except Exception as e:
                         print(f"Error processing article in {site_key}: {e}")
@@ -258,10 +259,31 @@ class NewsletterCrawler:
                     self._save_history(new_urls)
                 
                 return filtered_articles
-                
+                    
             except Exception as e:
                 print(f"Error crawling {site_key}: {e}")
                 return []
+
+    async def get_aitimes_content(self, url: str, crawler: AsyncWebCrawler) -> str:
+        """AI Times 기사 본문 가져오기"""
+        try:
+            run_config = CrawlerRunConfig(
+                cache_mode=CacheMode.BYPASS
+            )
+            
+            result = await crawler.arun(
+                url=url,
+                config=run_config
+            )
+            
+            if result and result.markdown:
+                return result.markdown
+            
+            return None
+            
+        except Exception as e:
+            print(f"Error getting AI Times content: {e}")
+            return None
 
 async def main():
     # 7일 이내의 아티클만 수집
