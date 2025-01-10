@@ -231,3 +231,6 @@ plans/
 # Codeium
 .codeiumignore
 todo/
+
+# News_data
+newsletter_data/
