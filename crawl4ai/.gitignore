@@ -233,4 +233,8 @@ plans/
 todo/
 
 # News_data
+<<<<<<< HEAD:.gitignore
 crawl4ai/newsletter_data/
+=======
+newsletter_data/
+>>>>>>> 1681965170be6d2d561718157b4cf492b065ea46:crawl4ai/.gitignore

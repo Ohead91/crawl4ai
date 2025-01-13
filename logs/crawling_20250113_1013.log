@@ -1,0 +1,135 @@
+Collecting articles since: 2025-01-06 10:13:42.461620
+
+Processing neuron...
+[INIT].... ¡æ Crawl4AI 0.4.247
+
+Fetching https://www.theneuron.ai/newsletter...
+[FETCH]... ¡é https://www.theneuron.ai/newsletter... | Status: True | Time: 1.10s
+[SCRAPE].. ¡ß Processed https://www.theneuron.ai/newsletter... | Time: 70ms
+[EXTRACT]. ¡á Completed for https://www.theneuron.ai/newsletter... | Time: 0.03199450019747019s
+[COMPLETE] ¡Ü https://www.theneuron.ai/newsletter... | Status: True | Total: 1.21s
+Found 30 articles, filtering...
+Skipping already crawled: https://www.theneuron.ai/newsletter/these-10-jobs-are-in-trouble
+Skipping already crawled: https://www.theneuron.ai/newsletter/jensens-wild-ai-prediction
+Skipping already crawled: https://www.theneuron.ai/newsletter/new-best-ai-tool-really
+Skipping already crawled: https://www.theneuron.ai/newsletter/nvidias-apple-moment
+Skipping already crawled: https://www.theneuron.ai/newsletter/new-year-new-ai
+Skipping already crawled: https://www.theneuron.ai/newsletter/ilya-predicts-the-future-of-ai
+Skipping already crawled: https://www.theneuron.ai/newsletter/your-next-tour-guide-could-be-ai
+Skipping already crawled: https://www.theneuron.ai/newsletter/ai-just-got-way-cheaper
+Skipping already crawled: https://www.theneuron.ai/newsletter/gpt-search-unlocked
+Skipping already crawled: https://www.theneuron.ai/newsletter/real-ai-usage-exposed
+Skipping already crawled: https://www.theneuron.ai/newsletter/your-chatgpt-is-messy-af
+Skipping already crawled: https://www.theneuron.ai/newsletter/advanced-vision-mode
+Skipping already crawled: https://www.theneuron.ai/newsletter/google-meta-apple-new-ai
+Skipping already crawled: https://www.theneuron.ai/newsletter/openai-fixed-their-ui
+Skipping already crawled: https://www.theneuron.ai/newsletter/sora-is-here
+Skipping already crawled: https://www.theneuron.ai/newsletter/o1-pro-is-insane
+Skipping already crawled: https://www.theneuron.ai/newsletter/teach-ai-your-expertise
+Skipping already crawled: https://www.theneuron.ai/newsletter/openais-new-drop-explained
+Skipping already crawled: https://www.theneuron.ai/newsletter/ai-training-for-beginners
+Skipping already crawled: https://www.theneuron.ai/newsletter/amazon-enters-the-ai-war
+Skipping already crawled: https://www.theneuron.ai/newsletter/mind-bending-ai-demo-drops
+Skipping already crawled: https://www.theneuron.ai/newsletter/open-ai-thats-actually-open
+Skipping already crawled: https://www.theneuron.ai/newsletter/your-own-desktop-gpt
+Skipping already crawled: https://www.theneuron.ai/newsletter/claude-masters-your-voice
+Skipping already crawled: https://www.theneuron.ai/newsletter/hidden-ai-economy-exposed
+Skipping already crawled: https://www.theneuron.ai/newsletter/ai-builds-apps-in-2-mins-flat
+Skipping already crawled: https://www.theneuron.ai/newsletter/google-vs-openai-smackdown
+Skipping already crawled: https://www.theneuron.ai/newsletter/nvidias-wild-day
+Skipping already crawled: https://www.theneuron.ai/newsletter/desktop-chatgpt-speaks-up
+Skipping already crawled: https://www.theneuron.ai/newsletter/new-bot-le-chat-does-it-all
+
+Found 0 new articles from neuron
+
+Processing aibreakfast...
+[INIT].... ¡æ Crawl4AI 0.4.247
+
+Fetching https://aibreakfast.beehiiv.com...
+[FETCH]... ¡é https://aibreakfast.beehiiv.com... | Status: True | Time: 1.07s
+[SCRAPE].. ¡ß Processed https://aibreakfast.beehiiv.com... | Time: 43ms
+[EXTRACT]. ¡á Completed for https://aibreakfast.beehiiv.com... | Time: 0.020813100039958954s
+[COMPLETE] ¡Ü https://aibreakfast.beehiiv.com... | Status: True | Total: 1.13s
+Found 12 articles, filtering...
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/grok-may-get-unhinged-mode-with-ios-app
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/nvidia-s-massive-announcements-at-ces
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/brain-computer-interface-decodes-thoghts
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/microsoft-s-ai-agent-automates-word-tasks
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/ai-agent-development-simplified
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/openai-confirms-for-profit-plans
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/this-robot-carries-a-human
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/openai-s-o3-has-programmers-fearful
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/will-openai-have-its-biggest-release-ever-today
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/google-s-ai-video-gen-destroys-sora
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/openai-s-projects-released
+Skipping already crawled: https://aibreakfast.beehiiv.com/p/openai-s-live-video-released
+
+Found 0 new articles from aibreakfast
+
+Processing deepview...
+[INIT].... ¡æ Crawl4AI 0.4.247
+
+Fetching https://www.thedeepview.co...
+[FETCH]... ¡é https://www.thedeepview.co... | Status: True | Time: 1.22s
+[SCRAPE].. ¡ß Processed https://www.thedeepview.co... | Time: 45ms
+[EXTRACT]. ¡á Completed for https://www.thedeepview.co... | Time: 0.022111100144684315s
+[COMPLETE] ¡Ü https://www.thedeepview.co... | Status: True | Total: 1.29s
+Found 30 articles, filtering...
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-oversight-governance-and-regulation
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-investing-trends
+Skipping already crawled: https://www.thedeepview.co/p/your-step-by-step-guide-to-securing-ai-in-the-enterprise
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-robots-avs-and-technical-advancements
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-threats-harms-and-ethics
+Skipping already crawled: https://www.thedeepview.co/p/prog-predictions-series-draft-ef9c081b34af8540
+Skipping already crawled: https://www.thedeepview.co/p/your-step-by-step-guide-to-securing-ai-in-the-enterprise
+Skipping already crawled: https://www.thedeepview.co/p/your-step-by-step-guide-to-securing-ai-in-the-enterprise
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-oversight-governance-and-regulation
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-oversight-governance-and-regulation
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-investing-trends
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-investing-trends
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-robots-avs-and-technical-advancements
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-robots-avs-and-technical-advancements
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-threats-harms-and-ethics
+Skipping already crawled: https://www.thedeepview.co/p/progress-predictions-2025-threats-harms-and-ethics
+Skipping already crawled: https://www.thedeepview.co/p/prog-predictions-series-draft-ef9c081b34af8540
+Skipping already crawled: https://www.thedeepview.co/p/prog-predictions-series-draft-ef9c081b34af8540
+Skipping already crawled: https://www.thedeepview.co/p/report-the-grid-can-t-handle-ai
+Skipping already crawled: https://www.thedeepview.co/p/report-the-grid-can-t-handle-ai
+Skipping already crawled: https://www.thedeepview.co/p/microsoft-and-openai-have-agi-figured-out-sort-of
+Skipping already crawled: https://www.thedeepview.co/p/microsoft-and-openai-have-agi-figured-out-sort-of
+Skipping already crawled: https://www.thedeepview.co/p/report-the-data-center-energy-spike
+Skipping already crawled: https://www.thedeepview.co/p/report-the-data-center-energy-spike
+Skipping already crawled: https://www.thedeepview.co/p/openai-unveils-powerful-new-model
+Skipping already crawled: https://www.thedeepview.co/p/openai-unveils-powerful-new-model
+Skipping already crawled: https://www.thedeepview.co/p/the-public-health-crisis-of-ai
+Skipping already crawled: https://www.thedeepview.co/p/the-public-health-crisis-of-ai
+Skipping already crawled: https://www.thedeepview.co/p/suki-partners-with-google-cloud-to-bring-ai-assistants-to-more-hospitals
+Skipping already crawled: https://www.thedeepview.co/p/suki-partners-with-google-cloud-to-bring-ai-assistants-to-more-hospitals
+
+Found 0 new articles from deepview
+
+Processing aitimes...
+[INIT].... ¡æ Crawl4AI 0.4.247
+
+Fetching https://www.aitimes.com/news/articleList.html?view_type=sm...
+[FETCH]... ¡é https://www.aitimes.com/news/articleList.html?view... | Status: True | Time: 1.81s
+[SCRAPE].. ¡ß Processed https://www.aitimes.com/news/articleList.html?view... | Time: 89ms
+[EXTRACT]. ¡á Completed for https://www.aitimes.com/news/articleList.html?view... | Time: 0.0391572997905314s
+[COMPLETE] ¡Ü https://www.aitimes.com/news/articleList.html?view... | Status: True | Total: 1.94s
+Found 10 articles, filtering...
+Skipping already crawled: https://www.aitimes.com/news/articleView.html?idxno=166899
+Skipping already crawled: https://www.aitimes.com/news/articleView.html?idxno=167004
+Skipping already crawled: https://www.aitimes.com/news/articleView.html?idxno=166892
+Skipping already crawled: https://www.aitimes.com/news/articleView.html?idxno=167022
+Skipping already crawled: https://www.aitimes.com/news/articleView.html?idxno=166932
+Skipping already crawled: https://www.aitimes.com/news/articleView.html?idxno=166913
+Skipping already crawled: https://www.aitimes.com/news/articleView.html?idxno=167020
+Skipping already crawled: https://www.aitimes.com/news/articleView.html?idxno=167008
+Skipping already crawled: https://www.aitimes.com/news/articleView.html?idxno=167052
+Skipping already crawled: https://www.aitimes.com/news/articleView.html?idxno=167023
+
+Found 0 new articles from aitimes
+
+No new articles found.
+
+File already processed: newsletter_data\articles_20250113_090959.json
